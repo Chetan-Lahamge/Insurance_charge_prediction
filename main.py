@@ -51,9 +51,9 @@ y_pred = model.predict(X_test)
 st.title('Insurance Charges Prediction')
 
 # Printing Model Performance Metrics
-st.subheader("Model Performance Metrics")
-st.write("R2 Score: {}".format(r2_score(y_test,y_pred)))
-st.write("Mean Squared Error: {}".format(mean_squared_error(y_test,y_pred)))
+# st.subheader("Model Performance Metrics")
+# st.write("R2 Score: {}".format(round(r2_score(y_test,y_pred),2)))
+# st.write("Mean Squared Error: {}".format(round(mean_squared_error(y_test,y_pred),2)))
 
 ## Taking Input from the user
 st.subheader('Predict Insurance Charges')
@@ -89,4 +89,4 @@ user_final.drop(['sex','smoker','region'],axis=1,inplace=True)
 
 if st.button("Predict"):
     prediction = model.predict(user_final)
-    st.write("Predicted Insurance Charges : ",prediction[0])
+    st.write("Predicted Insurance Charges : ",round(prediction[0],2))
